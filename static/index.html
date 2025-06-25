@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Redireccionando…</title>
+    <title>Bienvenido</title>
     <script>
-      const hash = window.location.hash;
-      if (hash.startsWith("#invite_token=")) {
-        window.location.replace("/admin/" + hash);
-      }
+      // Esperar al DOM antes de redirigir
+      document.addEventListener("DOMContentLoaded", function () {
+        const hash = window.location.hash;
+
+        // Redirigir solo si hay un token válido
+        if (hash && hash.startsWith("#invite_token=")) {
+          window.location.replace("/admin/" + hash);
+        }
+      });
     </script>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <p>Redireccionando al panel de CMS…</p>
+    <h1>Facil Digital Company</h1>
+    <p>Este sitio está en construcción. Si estás intentando acceder al panel de administración, por favor dirigite a <a href="/admin">/admin</a>.</p>
   </body>
 </html>
