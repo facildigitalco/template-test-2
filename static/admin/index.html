@@ -9,9 +9,27 @@
     <div id="nc-root"></div>
 
     <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js" defer></script>
+    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
+
+    <!-- Inicializar Netlify Identity y redirigir tras login -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+
+      // Inicializar el CMS solo después de que el DOM esté listo
+      document.addEventListener("DOMContentLoaded", function () {
+        window.CMS.init();
+      });
+    </script>
   </body>
 </html>
