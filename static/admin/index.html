@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <title>CMS</title>
+
+    <!-- Netlify Identity widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Required root element -->
+    <div id="nc-root"></div>
+
+    <!-- Your CMS config file -->
+    <script src="config.js"></script>
+  </body>
 </html>
