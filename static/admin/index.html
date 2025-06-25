@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>CMS</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
+
+    <!-- Defer evita ejecución antes del DOM -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js" defer></script>
   </head>
   <body>
+    <!-- Este div es obligatorio -->
     <div id="nc-root"></div>
 
+    <!-- Script para iniciar correctamente el CMS -->
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Asegurar que Netlify Identity se inicialice
+      window.addEventListener("load", function () {
+        // Forzar init solo cuando Netlify Identity y CMS están listos
         if (window.netlifyIdentity) {
           window.netlifyIdentity.on("init", (user) => {
             if (!user) {
@@ -22,8 +26,8 @@
           });
         }
 
-        // Iniciar Decap CMS cuando DOM está listo
-        if (window.CMS) {
+        // Evitar error de appendChild
+        if (window.CMS && document.getElementById("nc-root")) {
           window.CMS.init();
         }
       });
