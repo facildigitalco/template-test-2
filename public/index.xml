@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mi sitio Hugo con Decap CMS</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Mi sitio Hugo con Decap CMS</description>
+    <generator>Hugo</generator>
+    <language>es-ar</language>
+    <lastBuildDate>Wed, 25 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Proyecto 1</title>
+      <link>//localhost:1313/projects/project-1/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/projects/project-1/</guid>
+      <description>&lt;p&gt;Este es un proyecto de prueba. Podés editar esto desde el CMS o agregar más.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Proyecto de prueba</title>
+      <link>//localhost:1313/projects/proyecto-demo/</link>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/projects/proyecto-demo/</guid>
+      <description>&lt;p&gt;Este es un contenido de prueba para un proyecto.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sobre Nosotros</title>
+      <link>//localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/about/</guid>
+      <description>&lt;p&gt;Bienvenido a la página de prueba. Este contenido es editable desde el CMS.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
