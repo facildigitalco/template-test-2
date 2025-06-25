@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "about"
+    label: "Sobre Nosotros"
+    files:
+      - file: "content/about.md"
+        label: "Página Sobre Nosotros"
+        name: "about"
+        fields:
+          - { label: "Título", name: "title", widget: "string" }
+          - { label: "Cuerpo", name: "body", widget: "markdown" }
