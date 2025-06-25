@@ -3,15 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <title>CMS</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- Contenedor requerido por Decap CMS -->
     <div id="nc-root"></div>
 
-    <!-- Netlify Identity Widget -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Asegurar que Netlify Identity se inicialice
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
 
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@3.6.4/dist/decap-cms.js" defer></script>
+        // Iniciar Decap CMS cuando DOM está listo
+        if (window.CMS) {
+          window.CMS.init();
+        }
+      });
+    </script>
   </body>
 </html>
